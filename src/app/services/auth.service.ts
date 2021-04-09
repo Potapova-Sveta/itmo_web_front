@@ -1,23 +1,34 @@
-import {Injectable} from '@angular/core';
-import {Router} from '@angular/router';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { User } from '../models/user.model';
+import { environment } from '../../environments/environment';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
 
-  private username: string;
-
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private http: HttpClient) {
   }
 
-  public login(username: string): void {
-    localStorage.setItem('currentUser', username);
-    this.username = username;
+  public login(user: User): Observable<User> {
+    return this.http.post<User>(`${environment.backendURL}/users`, user).pipe(
+      tap(user => {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+      }),
+    );
   }
 
   public getLoggedInUserName(): string {
-    return localStorage.getItem('currentUser');
+    return JSON.parse(localStorage.getItem('currentUser'))?.name;
+  }
+
+  public getuser(): User {
+    return JSON.parse(localStorage.getItem('currentUser'));
   }
 
   public logout(): void {

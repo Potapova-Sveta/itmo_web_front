@@ -3,6 +3,7 @@ export class Task {
   status: TaskStatus;
   description: string;
   number: number;
+  comment: string;
 }
 
 export enum TaskStatus {

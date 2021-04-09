@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {Task} from '../../models/task.model';
-import {TaskService} from '../../services/task.service';
-import {Observable} from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Task, TaskStatus } from '../../models/task.model';
+import { TaskService } from '../../services/task.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-task',
@@ -17,7 +17,8 @@ export class TaskComponent implements OnInit {
   photoUrl: string | ArrayBuffer;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private taskService: TaskService) {
+              private taskService: TaskService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -25,7 +26,9 @@ export class TaskComponent implements OnInit {
 
 
   completeTask(task: Task): void {
-
+    this.taskService.updateTask({ ...task, status: TaskStatus.COMPLETE, comment: this.comment }).subscribe(_ => {
+      this.router.navigateByUrl('/');
+    });
   }
 
   changePhoto(files: File[]): void {

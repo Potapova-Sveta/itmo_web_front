@@ -1,9 +1,9 @@
-<header class="global-header">
+<header class='global-header'>
   <div>
     You have:
   </div>
-  <div class="global-header__tasks">
-    24 hours, 2 tasks
+  <div class='global-header__tasks'>
+    {{hoursLeft}} hours, {{tasksCount$ | async}} tasks
   </div>
-  <img src="/assets/icons/logout.svg" class="logout-icon" (click)="logout()">
+  <img src='/assets/icons/logout.svg' class='logout-icon' (click)='logout()'>
 </header>

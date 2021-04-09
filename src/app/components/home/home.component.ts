@@ -1,41 +1,25 @@
-import {Component, OnInit} from '@angular/core';
-import {Task, TaskStatus} from 'src/app/models/task.model';
+import { Component, OnInit } from '@angular/core';
+import { Task, TaskStatus } from 'src/app/models/task.model';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  tasks: Task[] = [
-    {
-      id: 'zxc',
-      status: TaskStatus.OPEN,
-      number: 1,
-      description: 'lorem ipsum'
-    },
-    {
-      id: 'zxc',
-      status: TaskStatus.FAILED,
-      number: 3,
-      description: 'lorem ipsum'
-    },
-    {
-      id: 'zxc',
-      status: TaskStatus.COMPLETE,
-      number: 2,
-      description: 'lorem ipsum'
-    }
-  ];
   TaskStatus = TaskStatus;
+  tasks$ = this.taskService.getTasks();
 
-  constructor() {
+  constructor(private taskService: TaskService) {
   }
 
   ngOnInit(): void {
   }
 
   cancelTask(task: Task): void {
-
+    this.taskService.updateTask({ ...task, status: TaskStatus.FAILED }).subscribe(_ => {
+      this.tasks$ = this.taskService.getTasks();
+    });
   }
 }
