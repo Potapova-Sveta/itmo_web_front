@@ -1,1 +1,103 @@
-/* You can add global styles to this file, and also import other style files */
+*, :after, :before {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+body {
+  color: #457B9D;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 667px;
+  width: 375px;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  flex-grow: 1;
+  /*padding: 0 48px 0 47px;*/
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field .form-field__input {
+  margin-top: 8px;
+  padding-left: 32px;
+
+  width: 280px;
+  height: 48px;
+  border: none;
+  background: #E5F4F5;
+  border-radius: 30px;
+
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  color: #1D3557;
+}
+
+.form-field .form-field__input:focus {
+  outline: none;
+  border: 1px solid #457B9D;
+}
+
+.form-field select.form-field__input {
+  text-overflow: ellipsis;
+  padding-right: 32px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("assets/icons/chevron-down.svg") 94% / 8% no-repeat #E5F4F5;
+}
+
+.form-field .form-field__label {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.fill-red {
+  fill: red;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  align-items: center;
+}
+
+.task-photo {
+  margin-top: 16px;
+  width: 150px;
+  height: 110px;
+}
+
+.delete-image {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 86px;
+  margin-left: 16px;
+}

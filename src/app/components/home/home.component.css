@@ -1,0 +1,86 @@
+h1 {
+  color: #1D3557;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 24px 0 24px 0;
+  align-self: flex-start;
+}
+
+.task {
+  width: 280px;
+  margin-bottom: 40px;
+}
+
+.task-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.task._failed {
+  opacity: 0.3;
+}
+
+.task-content {
+  padding: 8px 13px;
+  border: 2px solid #457B9D;
+  border-radius: 25px;
+  display: flex;
+  color: #1D3557;
+}
+
+.task-icon {
+  margin-right: 16px;
+}
+
+.task-toolbar {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.task-header {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.task-description {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px;
+}
+
+.task-description, .task-header {
+  margin: 0;
+}
+
+.btn {
+  width: 108px;
+  height: 32px;
+  border: none;
+  border-radius: 24px;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  color: #F1FAEE;
+}
+
+.btn:not(:first-child) {
+  margin-left: 8px;
+}
+
+.btn-accept {
+  background: #457B9D;
+}
+
+.btn-decline {
+  background: #E63946;
+}

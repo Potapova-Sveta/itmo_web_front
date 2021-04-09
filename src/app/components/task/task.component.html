@@ -1,0 +1,29 @@
+<ng-container *ngIf="task$ | async; let task">
+  <h1>Task {{task.number}}</h1>
+  <p class="task-description">
+    There should be a full description of the task
+  </p>
+  <form class="task-form" (ngSubmit)="completeTask(task)">
+    <div class="form-field">
+      <label for="comment" class="form-field__label">Comments:</label>
+      <textarea name="comment" id="comment" class="form-field__input" [(ngModel)]="comment"></textarea>
+    </div>
+
+    <ng-container *ngIf="!photoUrl">
+      <label for="photo" class="btn-file">Upload photo</label>
+      <input name="photo"
+             id="photo"
+             style="visibility:hidden;"
+             type="file"
+             class="upload-image"
+             accept="image/jpeg,image/png"
+             (change)="changePhoto($event.target.files)">
+    </ng-container>
+    <div *ngIf="photoUrl">
+      <img [src]="photoUrl" class="task-photo">
+      <img src="/assets/icons/cross.svg" class="delete-image" (click)="photoUrl = null">
+    </div>
+
+    <button class="done-button" [disabled]="!comment || !photoUrl">DONE!</button>
+  </form>
+</ng-container>

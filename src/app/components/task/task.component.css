@@ -1,0 +1,99 @@
+:host {
+  display: block;
+  width: 280px;
+}
+
+h1 {
+  color: #1D3557;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 24px 0 24px 0;
+  align-self: flex-start;
+}
+
+.upload-image {
+  margin-top: 16px;
+  width: 280px;
+
+
+  /*width: 144px;
+  height: 32px;
+  background: #457B9D;
+  border-radius: 24px;
+  border: none;*/
+
+}
+
+.btn-file {
+  margin-top: 18px;
+  width: 144px;
+  height: 32px;
+  background: #457B9D;
+  border-radius: 24px;
+  border: none;
+  color: #F1FAEE;
+  display: block;
+  padding-left: 16px;
+  padding-top: 7px;
+}
+
+#comment {
+  height: 112px;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  color: #1D3557;
+  padding: 10px 16px 10px 32px;
+}
+
+.done-button {
+  margin-top: 64px;
+  margin-bottom: 42px;
+  width: 162px;
+  height: 48px;
+
+  background: #457B9D;
+  border-radius: 24px;
+  border: none;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+
+  color: #F1FAEE;
+}
+
+.done-button {
+  align-self: center;
+}
+
+.done-button:disabled {
+  opacity: 0.3;
+}
+
+.form-field .form-field__label {
+  color: #1D3557;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.task-description {
+  color: #1D3557;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 0;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+}

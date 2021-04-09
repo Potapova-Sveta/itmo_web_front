@@ -1,0 +1,20 @@
+<footer>
+  <nav>
+    <a [routerLink]="'/calendar'"
+       [routerLinkActive]="'_active'"
+       class="menu-item">
+      <img src="assets/icons/calendar.svg" alt="calendar" class="menu-item-icon _small">
+    </a>
+    <a [routerLink]="'/'"
+       [routerLinkActive]="'_active'"
+       [routerLinkActiveOptions]="{exact: true}"
+       class="menu-item ">
+      <img src="assets/icons/house.svg" alt="home" class="menu-item-icon _large">
+    </a>
+    <a [routerLink]="'/account'"
+       [routerLinkActive]="'_active'"
+       class="menu-item">
+      <img src="assets/icons/person.svg" alt="account" class="menu-item-icon _small">
+    </a>
+  </nav>
+</footer>
